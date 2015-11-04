@@ -39,3 +39,4 @@ function initializeClock(id, endtime){
 
 var deadline = 'November 10 2015 11:00:50 UTC+0200';
 initializeClock('clockdiv', deadline);
+initializeClock('whitecountdown', deadline);

@@ -5,7 +5,6 @@ var app = new Vue({
     el: '#ourgraph',
 
     data: {
-        helo: 'mantap',
 
         deadline : 'November 10 2015 11:00:50 UTC+0200',
 
@@ -15,8 +14,7 @@ var app = new Vue({
 
         minutes: '',
 
-        seconds: ''
-
+        seconds: '',
 
     },
 
@@ -24,10 +22,13 @@ var app = new Vue({
         
         this.updateClock();
         setInterval(this.updateClock,1000);
+        //this.initScript();
+
 
     },
 
     methods:{
+
         updateClock: function(){
             var t = this.getTimeRemaining(this.deadline);
 
@@ -52,7 +53,10 @@ var app = new Vue({
                 'minutes': minutes,
                 'seconds': seconds
               };
-            }
+            },
+
+      
+
     }
 
 });

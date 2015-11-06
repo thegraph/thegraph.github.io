@@ -24,24 +24,26 @@
   width: 80%px;
   margin: 0px auto;
   padding: 20px 30px;
-  background-color: black;
+  background-color: #fff;
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
   transition: all .3s ease;
   font-family: Helvetica, Arial, sans-serif;
 }
 
-.modal-header h3 {
+.modal-header button {
   margin-top: 0;
-  color: #42b983;
+  color: black;
 }
 
 .modal-body {
-  margin: 20px auto;
+  margin: 70px auto 0 auto;
   text-align: center;
 }
 
 .modal-default-button {
+  margin-top: 0;
+  padding-top: 0;
   float: right;
 }
 

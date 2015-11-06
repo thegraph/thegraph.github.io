@@ -16,6 +16,12 @@ var app = new Vue({
 
         seconds: '',
 
+        form: true,
+
+        email: '',
+
+        modal: false,
+
     },
 
     ready: function  () {
@@ -23,6 +29,8 @@ var app = new Vue({
         this.updateClock();
         setInterval(this.updateClock,1000);
         //this.initScript();
+        Parse.initialize("7XxecD3TMATyRwYE0tRT7uPO527IXLMh2Hgk9J1C", "izeXdDZ2kkGGsl9VvaTDmEEeTkn0CSGAIAKRdwDr");
+
 
 
     },
@@ -54,6 +62,27 @@ var app = new Vue({
                 'seconds': seconds
               };
             },
+
+          formSubmit: function(event){
+            event.preventDefault();
+            this.form = false;
+            
+            TestObject = Parse.Object.extend("email_list");
+            testObject = new TestObject();
+              testObject.save({email: this.email}, {
+              success: function(object) {
+                
+              },
+              error: function(model, error) {
+                alert('error happened');
+              }
+            });
+
+          },
+
+          showModal: function(){
+            this.modal = true;
+          }
 
       
 

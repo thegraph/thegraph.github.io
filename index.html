@@ -96,8 +96,8 @@
 				<span><strong>pay once to forever</strong></span>
 				<span>No Monthly Charge</span>
 				<span>disc 50% with coupon MANTAP</span>
-
-				<a href="https://socialsuite.co/aff/go/alanshalih/?i=9" class="button button-primary button-blue milikiSekarang">Order Now</a>
+			
+				<button v-on:click="showModal" class="button button-primary button-blue milikiSekarang">Order Now</button>
 
 				<ul class="payment-logo">
 					<li><img src="file/paypal.png" alt="paypal"></li>
@@ -495,8 +495,7 @@
 			<p class="m0">Search and Filter Posts</p>
 			<img class="ss-feature" src="file/stories(1).png" alt="Screenshot" width="100%">
 			<div class="text-center">
-				
-				<a href="https://socialsuite.co/aff/go/alanshalih/?i=9" class="button button-primary button-blue milikiSekarang">Order Now</a>
+				<button v-on:click="showModal" class="button button-primary button-blue milikiSekarang">Order Now</button>
 			</div>
 		</div>
 	</div>
@@ -660,7 +659,7 @@
 	<p class="other-arrow text-center" style="100%; display: block;">Berikut ini daftar lengkap filter yg dapat Anda gunakan...</p>
 	<div class="text-center mt50">
 		
-		<a href="https://socialsuite.co/aff/go/alanshalih/?i=9" class="button button-primary button-blue milikiSekarang">Order Now</a>
+		<button v-on:click="showModal" class="button button-primary button-blue milikiSekarang">Order Now</button>
 	</div>
 	<div class="row">
 		<div class="six columns box-icon-head basic">
@@ -867,7 +866,7 @@
 			<img class="ss-feature" src="file/groups.png" width="100%">
 			<div class="text-center">
 				
-				<a href="https://socialsuite.co/aff/go/alanshalih/?i=9" class="button button-primary button-blue milikiSekarang">Order Now</a>
+				<button v-on:click="showModal" class="button button-primary button-blue milikiSekarang">Order Now</button>
 			</div>
 		</div>
 	</div>
@@ -903,7 +902,7 @@
 			<p class="text-center m0">Anda dapat mencari dan memfilter Pages berdasarkan</p>
 			<img class="ss-feature" src="file/pages.png" width="100%">
 			<div class="text-center">
-				<a href="https://socialsuite.co/aff/go/alanshalih/?i=9" class="button button-primary button-blue milikiSekarang">Order Now</a>
+				<button v-on:click="showModal" class="button button-primary button-blue milikiSekarang">Order Now</button>
 			</div>
 		</div>
 	</div>
@@ -961,7 +960,7 @@
 				<p class="text-center m0">Anda dapat mencari dan memfilter Events berdasarkan</p>              
 				<img class="ss-feature mb20" src="file/places.png" width="100%">
 				<div class="text-center">
-					<a href="https://socialsuite.co/aff/go/alanshalih/?i=9" class="button button-primary button-blue milikiSekarang">Order Now</a>
+					<button v-on:click="showModal" class="button button-primary button-blue milikiSekarang">Order Now</button>
 				</div>
 
 			</div>
@@ -1001,7 +1000,7 @@
 				<p>Anda dapat mencari dan memfilter Apps berdasarkan</p>
 
 				<div class="text-center">
-					<a href="https://socialsuite.co/aff/go/alanshalih/?i=9" class="button button-primary button-blue milikiSekarang">Order Now</a>
+					<button v-on:click="showModal" class="button button-primary button-blue milikiSekarang">Order Now</button>
 				</div>
 				<br>
 
@@ -1021,7 +1020,7 @@
 				<h2><img src="file/app-events.png">Search Events</h2>
 				
 				<div class="text-center">
-					<a href="https://socialsuite.co/aff/go/alanshalih/?i=9" class="button button-primary button-blue milikiSekarang">Order Now</a>
+					<button v-on:click="showModal" class="button button-primary button-blue milikiSekarang">Order Now</button>
 				</div>
 				
 				<p>Anda dapat mencari dan memfilter Events berdasarkan</p>
@@ -1059,7 +1058,7 @@
 						<span>No Montly Fees</span>
 						<span>disc 50% with coupon MANTAP</span>
 
-						<a id="big-buy-button" class="button button-primary button-blue milikiSekarang" href="https://socialsuite.co/aff/go/alanshalih/?i=9">Order Now</a>
+						<button id="big-buy-button" v-on:click="showModal" class="button button-primary button-blue milikiSekarang">Order Now</button>
 
 						<ul class="payment-logo">
 							<li><img src="file/visa.png" alt="Visa"></li>
@@ -1153,9 +1152,44 @@
 		</div>
 	</section>
 
+  <div class="modal-mask"  v-transition="modal" v-show="modal" style="display: none">
+    <div class="modal-wrapper">
+      <div class="modal-container">
+        <content select=".modal-header">
+            <div class="modal-header">
+                <button v-on:click="modal=false" class="modal-default-button">
+                x
+                </button>
+            </div>
+        </content>
+        <content select=".modal-body">
+          <div class="modal-body">
+        	<form v-on:submit="formSubmit" v-show="form">
+        		<input style="width: 30%" v-model="email" type="text" placeholder="enter your email address">
+        		<button class="button button-primary button-blue">get 50% disc Now!</button>
+        	</form>
+        	<div v-show="!form" style="display:none">
+				<p style="margin: 0 auto">copy this coupon</p>
+        		<h2 style="color: red">MANTAP</h2>
+        		<a  href="https://socialsuite.co/aff/go/alanshalih/?i=9" class="button button-primary button-blue">BUY THE GRAPH</a>
+        	</div>
+        	
+
+
+        	</div>
+
+
+        </content>
+
+    </div>
+    </div>
+
 
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.4/vue.min.js"></script>
+	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+	<script>Parse.initialize("7XxecD3TMATyRwYE0tRT7uPO527IXLMh2Hgk9J1C", "izeXdDZ2kkGGsl9VvaTDmEEeTkn0CSGAIAKRdwDr");
+</script>
 	<script src="file/graph.js"></script>
 
 

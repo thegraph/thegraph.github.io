@@ -29,8 +29,18 @@ var app = new Vue({
         this.updateClock();
         setInterval(this.updateClock,1000);
         //this.initScript();
-        Parse.initialize("7XxecD3TMATyRwYE0tRT7uPO527IXLMh2Hgk9J1C", "izeXdDZ2kkGGsl9VvaTDmEEeTkn0CSGAIAKRdwDr");
 
+        TestObject = Parse.Object.extend("click_counter");
+            testObject = new TestObject();
+              testObject.save({counter: 'keren'}, {
+              success: function(object) {
+                
+              },
+              error: function(model, error) {
+                alert('error happened');
+              }
+            });
+        
 
 
     },

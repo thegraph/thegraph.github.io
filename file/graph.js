@@ -6,7 +6,7 @@ var app = new Vue({
 
     data: {
 
-        deadline : 'November 10 2015 11:00:50 UTC+0200',
+        deadline : 'November 20 2015 11:00:50 UTC+0200',
 
         days: '',
 

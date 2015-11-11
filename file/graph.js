@@ -30,16 +30,7 @@ var app = new Vue({
         setInterval(this.updateClock,1000);
         //this.initScript();
 
-        click = Parse.Object.extend("click_counter");
-            click = new TestObject();
-              testObject.save({counter: 'keren'}, {
-              success: function(object) {
-                
-              },
-              error: function(model, error) {
-                alert('error happened');
-              }
-            });
+       
         
 
 

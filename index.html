@@ -1067,7 +1067,7 @@
 	<script>Parse.initialize("7XxecD3TMATyRwYE0tRT7uPO527IXLMh2Hgk9J1C", "izeXdDZ2kkGGsl9VvaTDmEEeTkn0CSGAIAKRdwDr");
 	 var clickObject = Parse.Object.extend("click_counter");
             var click = new clickObject();
-              click.save({counter: 'english'}, {
+              click.save({counter: 'english', href: window.location.href}, {
               success: function(object) {
                 
               },
